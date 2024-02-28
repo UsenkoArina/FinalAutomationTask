@@ -1,8 +1,6 @@
 export function parseMenuExpression(menuExpression) {
-    // menuExpression: Women -> Evening Dresses
-    const parts = menuExpression.split('->');
-
-    return parts.map((p) => p.trim());
+    // menuExpression: Women
+    return [menuExpression.trim()];
 }
 
 export function priceStringToNumber(priceString) {

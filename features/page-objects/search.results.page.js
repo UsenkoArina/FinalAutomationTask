@@ -1,6 +1,6 @@
 import { Page } from './page.js';
 import { browser } from '@wdio/globals';
-//search
+
 class SearchResultsPage extends Page {
   get searchResults() { return $$('#search'); }
 

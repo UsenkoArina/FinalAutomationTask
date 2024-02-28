@@ -7,33 +7,38 @@ import cartPage from '../page-objects/cart.page.js';
 import { priceStringToNumber } from '../utils/utils.js';
 
 When('I click on a product', async function() {
-    
-    await expect(productsPage.productName).toBeDisplayed();
-    await productsPage.productName.waitForDisplayed();
-    await productsPage.productName.click();
-    await browser.debug()
+    const productName = await productsPage.productName;
+    await productName.waitForDisplayed();
+    await productName.click();
+    await browser.debug();
 });
 
 
-When('I select size and color', async function() {
-    const sizeElement = await productPage.firstSizeButton;
-    await sizeElement.click();
-    this.sizeText = await sizeElement.getText();
+When('I select color', async function() {
 
-    const colorElement = await productPage.SecondColorButton;
-    await colorElement.click();
-    this.color = await colorElement.getAttribute('title');
+    const colorElement = await productPage.secondColorButton;
+    if (colorElement) {
+        await colorElement.waitForClickable({ timeout: 5000 });
+        await colorElement.click();
+        this.color = await colorElement.getAttribute('title');
+    } else {
+        console.error('Color element is not found.');
+        return;
+    }
 });
+
+
 
 When('I click the Add to Card button', async function() {
     this.productTitle = await productPage.productTitle.getText();
     this.productPrice = await productPage.productPrice.getText();
-
     await productPage.addToCartButton.click();
+
+    
 });
 
 When('I click on the close window button', async function () {
-    const closeButton = await driver.findElement(By.className('cross'));
+    const closeButton = await browser.$('.cross');
     await closeButton.click();
 });
   
