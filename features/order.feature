@@ -1,4 +1,4 @@
-@wip
+# @wip
 Feature: Checkout Process
 
     Scenario: Unregistered user proceeding with checkout

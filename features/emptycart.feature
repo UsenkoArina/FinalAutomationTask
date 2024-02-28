@@ -1,5 +1,5 @@
-# @wip
-Feature: Cart Functionality
+@wip
+Feature: Checking the cart operation
 
     Scenario: The user deletes an item from the cart, and the cart becomes empty
         Given I am on the home page
