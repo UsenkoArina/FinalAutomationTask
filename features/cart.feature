@@ -1,4 +1,4 @@
-# @wip
+@wip
 Feature: Cart Functionality
 
     Scenario: The user adds items to the cart, and the quantity of items increases

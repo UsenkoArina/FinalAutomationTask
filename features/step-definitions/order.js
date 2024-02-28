@@ -4,9 +4,9 @@ import productPage from '../page-objects/product.page.js';
 import headerPage from '../page-objects/header.page.js';
 import homePage from '../page-objects/home.page.js';
 import cartPage from '../page-objects/cart.page.js';
-import authenticationPage from '../page-objects/cart.page.js';
-import { priceStringToNumber } from '../utils/utils.js';
 import authenticationPage from '../page-objects/authentication.page.js';
+import { priceStringToNumber } from '../utils/utils.js';
+
 
 When('I click on a product', async function() {
     const productName = await productsPage.productName;

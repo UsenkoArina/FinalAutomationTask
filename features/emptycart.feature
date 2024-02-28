@@ -1,4 +1,4 @@
-@wip
+# @wip
 Feature: Checking the cart operation
 
     Scenario: The user deletes an item from the cart, and the cart becomes empty
