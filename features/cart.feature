@@ -8,7 +8,8 @@ Feature: Cart Functionality
         And I click on a product
         And I select color
         And I click the Add to Card button
-        When I select "T-shirts" menu item
+         And I click on the close window button
+        When I select "Women" menu item
         And I click on a product
         And I select color
         And I click the Add to Card button
