@@ -4,7 +4,9 @@ import productPage from '../page-objects/product.page.js';
 import headerPage from '../page-objects/header.page.js';
 import homePage from '../page-objects/home.page.js';
 import cartPage from '../page-objects/cart.page.js';
+import authenticationPage from '../page-objects/cart.page.js';
 import { priceStringToNumber } from '../utils/utils.js';
+import authenticationPage from '../page-objects/authentication.page.js';
 
 When('I click on a product', async function() {
     const productName = await productsPage.productName;
@@ -37,6 +39,7 @@ When('I click the Add to Card button', async function() {
     
 });
 
+
 When('I click on the close window button', async function () {
     const closeButton = await browser.$('.cross');
     await closeButton.click();
@@ -62,5 +65,5 @@ Given('I have no items in my cart', async function() {
 });
 
 Then('I am on the authentication page', async function() {
-    await authenticationPage.waitForDisplayed({ timeout: 15000, reverse: false });
+    await authenticationPage.open();
 });
