@@ -1,6 +1,7 @@
 @wip
 Feature: Cart Functionality
 
+    @scenario3
     Scenario: The user adds items to the cart, and the quantity of items increases
         Given I am on the home page
         And I have no items in my cart
@@ -8,6 +9,7 @@ Feature: Cart Functionality
         And I click on a product
         And I select color
         And I click the Add to Card button
+        # REVIEW: What's with the weird indentation
          And I click on the close window button
         When I select "Women" menu item
         And I click on a product
