@@ -3,6 +3,7 @@ export function parseMenuExpression(menuExpression) {
     return [menuExpression.trim()];
 }
 
+// REVIEW: Where is this used? Is it just copied from previous project?
 export function priceStringToNumber(priceString) {
     const numberString = priceString.replace('$', '');
 

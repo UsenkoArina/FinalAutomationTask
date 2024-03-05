@@ -1,6 +1,7 @@
 # @wip
 Feature: Checkout Process
 
+    @order
     Scenario: Unregistered user proceeding with checkout
         Given I am on the home page
         And I have no items in my cart

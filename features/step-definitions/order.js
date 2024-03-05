@@ -5,6 +5,7 @@ import headerPage from '../page-objects/header.page.js';
 import homePage from '../page-objects/home.page.js';
 import cartPage from '../page-objects/cart.page.js';
 import authenticationPage from '../page-objects/authentication.page.js';
+// REVIEW: Where is this used? Is it just copied from previous project?
 import { priceStringToNumber } from '../utils/utils.js';
 
 
@@ -12,13 +13,17 @@ When('I click on a product', async function() {
     const productName = await productsPage.productName;
     await productName.waitForDisplayed();
     await productName.click();
-    await browser.debug();
+    // REVIEW: This was forgotten here probably
+    // await browser.debug();
 });
 
 
 When('I select color', async function() {
-
-    const colorElement = await productPage.secondColorButton;
+    // REVIEW: This is wrong. First, "secondColorButton" doesn't exist in your page object, you have defined "SecondColorButton"
+    // Second, awaiting and validating an element doesn't make sense. The $() always retruns something regardles of the element being visible.
+    // To check something there are "isDisplayed", "isExisting", "waitForDisplayed", etc... methods.
+    // const colorElement = await productPage.secondColorButton;
+    const colorElement = await productPage.SecondColorButton;
     if (colorElement) {
         await colorElement.waitForClickable({ timeout: 5000 });
         await colorElement.click();
@@ -41,11 +46,16 @@ When('I click the Add to Card button', async function() {
 
 
 When('I click on the close window button', async function () {
+    // REVIEW: Needed this
+    await browser.$('.cross').waitForClickable();
+    // REVIEW: Where is the page object?
     const closeButton = await browser.$('.cross');
     await closeButton.click();
 });
   
   When('I click on the cart button', async function () {
+    // REVIEW: What is "cartButton"?
+    // Ok, I assume you didn't get this far because of the issues before.
     await cartButton.click();
 });
   
